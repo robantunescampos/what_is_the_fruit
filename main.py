@@ -1,12 +1,17 @@
 from functions.choose_fruit import choose_fruit
 
-print('Em qual fruta estou pensando?')
-
 fruit = choose_fruit()
 
-user = input('Em qual fruta estou pensando? ')
+chances = 3
 
-while (user != fruit):
-    user = input('Vamos tentar novamente: ')
+while (chances > 0):
+    user = input('Em que fruta estou pensando? ')
 
-print('Parabéns você acertou, eu estava pensando em ' + fruit)
+    if (user == fruit):
+        print('Parabéns você acertou, eu estava pensando em ' + fruit)
+        break
+
+    chances-=1
+
+if (chances == 0):
+    print('suas chances acabaram.')
